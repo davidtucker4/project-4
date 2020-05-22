@@ -1,5 +1,6 @@
 //jshint esversion: 6
 
+
 let controller = function() {
 
   if (localStorage.getItem("toDoList")) {
@@ -17,8 +18,6 @@ let controller = function() {
       //$new_comment.fadeIn();
       $(".comment-input input").val("");
 
-      //log the list of paragraph elements
-      //console.log($(".comments").html());
 
       localStorage.setItem("toDoList", $(".comments").html());
       console.log(localStorage.getItem("toDoList"));
@@ -36,4 +35,15 @@ let controller = function() {
   });
 };
 
-$(document).ready(controller);
+let deletHandler = () => {
+  console.log("dH");
+  localStorage.removeItem("toDoList");
+  window.location.reload();
+};
+
+$(document).ready(() => {
+  console.log("ready");
+  let buttonElem = document.querySelectorAll('button')[1];
+  buttonElem.addEventListener('click', deletHandler);
+  controller();
+});
