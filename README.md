@@ -1,6 +1,3 @@
-# Project 4 Repo
-
-[Github User Page](https://davidtucker4.github.io/)
 
 ## 281 Project 4 Learning Outcomes
 
